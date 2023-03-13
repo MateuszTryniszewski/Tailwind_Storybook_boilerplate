@@ -50,8 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-import './page.css';
-import MyHeader from './Header.vue';
+import MyHeader from '../molecules/Header.vue';
 
 import { ref } from 'vue';
 
