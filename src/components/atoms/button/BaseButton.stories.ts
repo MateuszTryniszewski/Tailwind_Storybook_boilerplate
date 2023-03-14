@@ -51,10 +51,20 @@ export const Success: Story = {
 export const CustomColors: Story = {
   args: {
     label: 'Button',
-    backgroundColor: 'orange-300',
-    textColor: 'orange-900'
+    backgroundColor: 'bg-orange-300',
+    textColor: 'text-orange-900'
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    label: 'Button',
+    backgroundColor: 'bg-orange-300',
+    textColor: 'text-orange-900',
+    disabled: true,
+  },
+};
+
 
 export const Large: Story = {
   args: {

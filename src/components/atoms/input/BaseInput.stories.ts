@@ -1,27 +1,68 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import Input from './BaseInput.vue'
+import BaseInput from './BaseInput.vue'
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof BaseInput> = {
   title: 'Example/Atoms/Input',
-  component: Input,
+  component: BaseInput,
   tags: ['autodocs'],
-  argTypes: {
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
-    backgroundColor: { control: 'color' },
-    onClick: { action: 'clicked' },
-  },
-  args: { primary: false }, // default value
+  argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof BaseInput>;
 
 export const Text: Story = {
   args: {
-    primary: true,
-    secondary: false,
-    label: 'Button',
+   type: 'text',
+   name: 'Input',
+   label: 'Pole tekstowe'
   },
 };
+
+export const Password: Story = {
+  args: {
+   type: 'password',
+   name: 'Input',
+   label: 'Hasło'
+  },
+};
+
+export const Email: Story = {
+  args: {
+   type: 'email',
+   name: 'Input',
+   label: 'Email'
+  },
+};
+
+export const TextWithHelp: Story = {
+  args: {
+   type: 'email',
+   name: 'Input',
+   help: 'To jest wskazówka do pola tekstowego',
+   label: 'Pole tekstowe'
+  },
+};
+
+export const RequiredField: Story = {
+  args: {
+   type: 'text',
+   name: 'Input',
+   label: 'Pole tekstowe',
+   validation: 'required|matches:/^[a-zA-Z]+$/|length:5',
+   validationMessages: { matches: "Pole wymagane"}
+  },
+};
+
+export const Select: Story = {
+  args: {
+   type: 'select',
+   name: 'Input',
+   label: 'Pole tekstowe',
+   validation: 'required',
+   validationMessages: { matches: "Pole wymagane"}
+  },
+};
+
 

@@ -1,37 +1,32 @@
 <template>
   <FormKit
-    type="text"
-    label="Section-key class props"
-    help="Look, Ma! Tailwind styles"
+    :type="type"
+    :label="label"
+    :name="name"
+    :help="help"
+    :validation="validation"
+    :validation-messages="validationMessages"
     outer-class="mb-5"
-    label-class="block mb-1 font-bold text-sm"
-    inner-class="max-w-md border border-gray-400 rounded-lg mb-1 overflow-hidden focus-within:border-blue-500"
-    input-class="w-full h-10 px-3 border-none text-base text-gray-700 placeholder-gray-400"
-    help-class="text-xs text-gray-500"
+    label-class="block text-gray-700 text-sm font-bold mb-1"
+    inner-class="max-w-md"
+    input-class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 hover:border-primary-200 focus:border-primary-500 focus:outline-none"
+    help-class="text-xs pt-1 text-gray-500"
   />
 </template>
 
 <script lang="ts" setup>
 // import { computed } from 'vue';
 
-// const props = withDefaults(defineProps<{
-//   label: string,
-//   primary?: boolean,
-//   secondary?: boolean,
-//   success?: boolean,
-//   danger?: boolean,
-//   backgroundColor?: string,
-//   textColor?: string,
-//   outline?: boolean,
-//   size?: 'small' | 'medium' | 'large',
-// }>(), {
-//   label: 'Save',
-//   primary: false,
-//   secondary: false,
-//   color: 'light',
-//   outline: false,
-//   size: 'medium',
-// });
+const props = withDefaults(defineProps<{
+  type: string,
+  label: string,
+  name: string,
+  help?: string,
+  validation?: string,
+  validationMessages?: any,
+}>(), {
+  type: 'text',
+});
 
 // const emit = defineEmits<{
 //   (e: 'click', id: number): void;

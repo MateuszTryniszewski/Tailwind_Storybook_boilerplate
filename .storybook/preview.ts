@@ -1,5 +1,15 @@
 import type { Preview } from '@storybook/vue3'
+import { setup } from '@storybook/vue3'
+import { plugin, defaultConfig } from '@formkit/vue'
+
+setup((app) => {
+  app.use(plugin, defaultConfig)
+})
+
 import '../src/style.css';
+import '../dist/output.css'
+
+
 
 const preview: Preview = {
   parameters: {
